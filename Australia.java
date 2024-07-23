@@ -1,44 +1,31 @@
-package inheritance;
-// WAp on super calling statement with parameterized and non parameterized
-class America
+package inter_face;
+//WAP to Achieve the Multiple level inheritance by interface
+interface England
 {
-	America(int a)
+	void Match_1();
+}
+interface Newzealand
+{
+	void Match_2();
+}
+public class Australia implements England,Newzealand
+{
+	public void Match_2() 
 	{
-		System.out.println(" America is statment 1");
+		System.out.println("Match-1 :> Australia Won by 85 Runs ");
+	}
+
+	public void Match_1() 
+	{
+		System.out.println("Match-2 :> Australia Won by 7 Wickets ");
+
+	}
+	public static void main(String[] args) 
+	{
+		System.out.println("WORLD CUP MATCH RESULTS ");
+		
+		Australia A1=new Australia();
+		A1.Match_1();
+		A1.Match_2();
 	}
 }
-class Engalnd extends America
-{
-	Engalnd(int a, double b)
-	{
-		super(200);  //-------> Super calling statement explicitly
-		System.out.println(" Engaland  is statment 2");
-
-	}
-}
-class Africa extends Engalnd
-{
-	Africa ()
-	{
-		super(100,45.88);//-------> Super calling statement explicitly
-		System.out.println(" Africa is statment 3");
-
-	}
-}
-
-public class Australia extends Africa
-{
-	Australia(double a,double b)
-	{
-		////-------> Super calling statement implicitly
-		System.out.println(" Australia is statment 4");
-
-	}
-
-	public static void main(String[] args)
-	{
-		new Australia(45.55,57.99);
-	}
-}
-
-
